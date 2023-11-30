@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <script>
+        function calculateElapsedDays() {
+            // 기준 날짜
+            var baseDate = new Date(2022, 8, 23);  // 월은 0부터 시작하므로 8은 9월을 의미합니다.
+
+            // 오늘 날짜
+            var today = new Date();
+
+            // 경과 일수 계산
+            var timeDiff = today.getTime() - baseDate.getTime();
+            var elapsedDays = Math.floor(timeDiff / (24 * 60 * 60 * 1000));
+
+            // 결과 출력
+            var resultElement = document.getElementById("result");
+            resultElement.innerHTML = "기준 날짜: " + baseDate.toDateString() + "<br>" +
+                                      "오늘 날짜: " + today.toDateString() + "<br>" +
+                                      "경과 일수: " + elapsedDays + "일";
+        }
+    </script>
+</head>
+<body>
+    <h1>날짜 경과 계산</h1>
+    <button onclick="calculateElapsedDays()">경과 일수 계산하기</button>
+    <div id="result"></div>
+</body>
+</html>
